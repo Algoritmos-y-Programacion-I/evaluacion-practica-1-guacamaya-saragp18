@@ -110,7 +110,10 @@ public class Guacamaya {
             unidades[i] = reader.nextInt();
         }
     }
-
+    /**
+     * Descripcion: Este metodo lo que va a realizar sera calcular la cantidad total de unidades vendidas durante el dia.
+     * @return total: Total de unidades vendidas durante el dia.
+     */
     public static int calcularTotalUnidadesVendidas(){
         int total = 0;
         for (int i = 0; i < unidades.length; i++) {
@@ -118,7 +121,12 @@ public class Guacamaya {
         }
         return total;
     }
-
+    
+    /**
+     * Descripcion: Este metodo va a calcular el precio promedio de las referencias de producto que fueron vendidas durante el dia.
+     * @return sumadePrec/precios.length: El promedio de las unidades que fueron vendidas durante todo el dia.
+     */
+   
     public static double calcularPrecioPromedio(){
         double sumadePrec = 0;
         for (int i = 0; i < precios.length; i++) {
@@ -136,6 +144,12 @@ public class Guacamaya {
         return totaldeventas;
 
     }
+
+    /**
+     * Descripcion: Este metodo va a calcular el número de referencias de productos que hayan superado un limite minimo durante el dia.
+     * @param limite: Calcula el limite minimo de ventas.
+     * @return count: El numero de referencias que superaron el limite.
+     */
 
     public static int consultarReferenciasSobreLimite(double limite){
         int count = 0;

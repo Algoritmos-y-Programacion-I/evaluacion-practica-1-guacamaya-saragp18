@@ -103,35 +103,49 @@ public class Guacamaya {
     }
 
     public static void solicitarDatos(){
-
-        
-     
+        for (int i = 0; i < precios.length; i++) {
+            System.out.print("Ingrese el precio de la referencia del producto " + (i+1) + ":");
+            precios[i] = reader.nextDouble();
+            System.out.print("Ingrese la cantidad de cada una de las referencias de productos que fueron vendidas" + (i+1) + ":");
+            unidades[i] = reader.nextInt();
+        }
     }
 
     public static int calcularTotalUnidadesVendidas(){
-
-        return 0;
-
-
+        int total = 0;
+        for (int i = 0; i < unidades.length; i++) {
+            total += unidades[i];
+        }
+        return total;
     }
 
     public static double calcularPrecioPromedio(){
+        double sumadePrec = 0;
+        for (int i = 0; i < precios.length; i++) {
+            sumadePrec += precios[i];
+        }
 
-        return 0;
-
-
+       return sumadePrec/precios.length;
     }
 
     public static double calcularVentasTotales(){
-
-        return 0;
-
+        double totaldeventas = 0;
+        for (int i = 0; i < precios.length; i++) {
+            totaldeventas += precios[i]*unidades[i];
+        }
+        return totaldeventas;
 
     }
 
     public static int consultarReferenciasSobreLimite(double limite){
+        int count = 0;
+        for (int i = 0; i < precios.length; i++) {
+            if (precios[i]*unidades[i] > limite){
+                count++;
+            }
+        }
 
-        return 0;
+        return count;
 
     }
 
